@@ -279,8 +279,8 @@ img {
   width: 26px;
   height: 26px;
   background-color: var(--gold);
-  -webkit-mask: url("images/logo-icon.png") center / contain no-repeat;
-  mask: url("images/logo-icon.png") center / contain no-repeat;
+  -webkit-mask: url("images/logo-icon.webp") center / contain no-repeat;
+  mask: url("images/logo-icon.webp") center / contain no-repeat;
 }
 
 .brand-text {
@@ -2866,8 +2866,8 @@ body.fs-menu-open {
   width: 22px;
   height: 22px;
   background-color: var(--gold);
-  -webkit-mask: url("images/logo-icon.png") center / contain no-repeat;
-  mask: url("images/logo-icon.png") center / contain no-repeat;
+  -webkit-mask: url("images/logo-icon.webp") center / contain no-repeat;
+  mask: url("images/logo-icon.webp") center / contain no-repeat;
 }
 
 .footer-divider {
@@ -3053,7 +3053,7 @@ body.fs-menu-open {
   position: relative;
   width: 100%;
   height: 450px;
-  background-image: url("images/home-hero.jpg");
+  background-image: url("images/home-hero.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -4941,7 +4941,7 @@ body.fs-menu-open {
 
 .faq-hero {
   height: 560px;
-  background-image: url("images/home-hero.jpg");
+  background-image: url("images/home-hero.webp");
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
@@ -5448,7 +5448,7 @@ body.fs-menu-open {
 .contact-hero {
   height: auto;
   padding: 130px 0 120px;
-  background-image: url("images/home-hero.jpg");
+  background-image: url("images/home-hero.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -5459,7 +5459,7 @@ body.fs-menu-open {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("images/home-hero.jpg");
+  background-image: url("images/home-hero.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -5885,7 +5885,7 @@ body.fs-menu-open {
   min-height: 100vh;
   display: flex;
   padding: 48px clamp(24px, 5vw, 90px);
-  background: url("images/login-signup-bg.jpg") center / cover no-repeat fixed;
+  background: url("images/login-signup-bg.webp") center / cover no-repeat fixed;
   overflow: hidden;
 }
 
@@ -6495,7 +6495,7 @@ body.fs-menu-open {
   align-items: center;
   justify-content: center;
   padding: 48px 24px;
-  background: url("images/login-signup-bg.jpg") center / cover no-repeat fixed;
+  background: url("images/login-signup-bg.webp") center / cover no-repeat fixed;
   overflow: hidden;
 }
 
