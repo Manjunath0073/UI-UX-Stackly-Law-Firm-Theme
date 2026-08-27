@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 | Page Not Found — Stackly Law Firm</title>
+    <meta name="description" content="The page you are looking for could not be found." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="error-body">
+    <div class="error-page">
+      <div class="error-content">
+        <span class="error-code" aria-hidden="true">404</span>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-text">
+          The page you&rsquo;re looking for doesn&rsquo;t exist, may have been
+          removed, or is temporarily unavailable. Let&rsquo;s get you back on the
+          right track.
+        </p>
+
+        <div class="error-actions">
+          <button type="button" class="error-btn error-btn--ghost" id="goBackBtn">
+            <span aria-hidden="true">&larr;</span> Go Back
+          </button>
+          <a href="index.html" class="error-btn error-btn--gold">
+            Go to Home <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("goBackBtn").addEventListener("click", function () {
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = "index.html";
+        }
+      });
+    </script>
+  </body>
+</html>

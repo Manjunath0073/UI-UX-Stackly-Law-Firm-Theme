@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Stackly Law Firm</title>
+    <meta
+      name="description"
+      content="Contact Stackly Law Firm for a consultation on business law, education law, and general legal practice."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="about-hero contact-hero">
+      <header class="navbar about-nav" id="navbar">
+        <nav class="nav-inner" aria-label="Main navigation">
+          <a href="index.html" class="brand">
+            <span class="brand-icon" aria-hidden="true">
+              <span class="logo-img"></span>
+            </span>
+            <span class="brand-text"
+              >Stackly <span class="brand-text-light">Law Firm</span></span
+            >
+          </a>
+
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li>
+              <a href="services.html" class="nav-link">Services</a>
+            </li>
+            <li><a href="cases.html" class="nav-link">Cases</a></li>
+            <li><a href="faq.html" class="nav-link">FAQ</a></li>
+            <li>
+              <a href="contact.html" class="nav-link is-active">Contact Us</a>
+            </li>
+          </ul>
+
+          <div class="nav-actions">
+            <a href="signup.html" class="btn btn-cta about-nav-btn"
+              ><span class="btn-label">Sign Up</span></a
+            >
+            <button
+              class="nav-toggle about-toggle"
+              id="navToggle"
+              aria-label="Open menu"
+              aria-expanded="false"
+              aria-controls="fullscreenMenu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Premium Fullscreen Mobile Menu -->
+      <div class="fs-menu" id="fullscreenMenu" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+        <div class="fs-menu__backdrop"></div>
+        <div class="fs-menu__panel">
+          <div class="fs-menu__header">
+            <a href="index.html" class="fs-menu__brand">
+              <span class="brand-icon" aria-hidden="true">
+                <span class="logo-img"></span>
+              </span>
+              <span class="brand-text">Stackly <span class="brand-text-light">Law Firm</span></span>
+            </a>
+            <button class="fs-menu__close" id="fsMenuClose" aria-label="Close menu">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            </button>
+          </div>
+
+          <nav class="fs-menu__nav" aria-label="Mobile navigation">
+            <ul class="fs-menu__links">
+              <li><a href="index.html" class="fs-menu__link" data-index="0">Home</a></li>
+              <li><a href="about.html" class="fs-menu__link" data-index="1">About</a></li>
+              <li><a href="services.html" class="fs-menu__link" data-index="2">Services</a></li>
+              <li><a href="cases.html" class="fs-menu__link" data-index="3">Cases</a></li>
+              <li><a href="faq.html" class="fs-menu__link" data-index="4">FAQ</a></li>
+              <li><a href="contact.html" class="fs-menu__link is-active" data-index="5">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="fs-menu__bottom">
+            <a href="contact.html" class="fs-menu__cta">
+              <span class="fs-menu__cta-text">Get Consultation</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="4" y1="12" x2="20" y2="12"/>
+                <polyline points="13 5 20 12 13 19"/>
+              </svg>
+            </a>
+
+            <div class="fs-menu__info">
+              <div class="fs-menu__info-block">
+                <span class="fs-menu__info-label">Location</span>
+                <span class="fs-menu__info-value">Stackly, Salem, Tamil Nadu</span>
+              </div>
+              <div class="fs-menu__info-block">
+                <span class="fs-menu__info-label">Email</span>
+                <a href="mailto:info@stackly.com" class="fs-menu__info-value fs-menu__info-link">info@stackly.com</a>
+              </div>
+              <div class="fs-menu__info-block">
+                <span class="fs-menu__info-label">Working Hours</span>
+                <span class="fs-menu__info-value">Mon – Sat : 9:00 AM – 7:00 PM</span>
+                <span class="fs-menu__info-value fs-menu__info-muted">Sunday : Closed</span>
+              </div>
+            </div>
+
+            <div class="fs-menu__social">
+              <a href="404.html" class="fs-menu__social-link" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="404.html" class="fs-menu__social-link" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </a>
+              <a href="404.html" class="fs-menu__social-link" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="404.html" class="fs-menu__social-link" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </header>
+
+      <div class="about-hero-content">
+        <div class="about-hero-inner contact-hero-inner">
+          <h1 class="about-hero-title contact-hero-title">Contact us</h1>
+
+          <span class="about-hero-divider" aria-hidden="true"></span>
+
+          <p class="about-hero-text contact-hero-text">
+            Lorem ipsum dolor sit amet consectetur. Commodo pulvinar molestie
+            pellentesque urna libero velit porta. Velit pellentesque hac gravida
+            pellentesque est semper. Duis lectus gravida
+          </p>
+        </div>
+</div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-grid">
+        <div class="contact-form-side">
+          <h2 class="contact-section-title">Get In Touch</h2>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="contact-form-row">
+              <div class="contact-field">
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  class="contact-input"
+                  placeholder="Enter first name"
+                  autocomplete="given-name"
+                />
+                <span class="contact-error" id="firstNameError"></span>
+              </div>
+
+              <div class="contact-field">
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  class="contact-input"
+                  placeholder="Enter last name"
+                  autocomplete="family-name"
+                />
+                <span class="contact-error" id="lastNameError"></span>
+              </div>
+            </div>
+
+            <div class="contact-form-row">
+              <div class="contact-field">
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="contact-input"
+                  placeholder="Enter your phone"
+                  autocomplete="tel"
+                />
+                <span class="contact-error" id="phoneError"></span>
+              </div>
+
+              <div class="contact-field">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="contact-input"
+                  placeholder="Enter your email"
+                  autocomplete="email"
+                />
+                <span class="contact-error" id="emailError"></span>
+              </div>
+            </div>
+
+            <div class="contact-field contact-field--full">
+              <textarea
+                id="message"
+                name="message"
+                class="contact-input contact-textarea"
+                placeholder="Enter message"
+                rows="5"
+              ></textarea>
+              <span class="contact-error" id="messageError"></span>
+            </div>
+
+            <button type="submit" class="contact-submit">Send Message</button>
+            <p class="contact-success" id="contactSuccess" role="status">
+              Message sent successfully!
+            </p>
+          </form>
+        </div>
+
+        <div class="contact-map-side">
+          <iframe
+            src="https://www.google.com/maps?q=Stackly+Salem+Tamil+Nadu&output=embed"
+            class="contact-map"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Stackly Law Firm location map"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-info-strip">
+      <div class="contact-info-strip-grid">
+        <div class="contact-info-item">
+          <a href="404.html" class="contact-info-link">
+            <span class="contact-info-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </span>
+            <span class="contact-info-text">+22 7272 8282</span>
+          </a>
+        </div>
+        <div class="contact-info-item">
+          <a href="404.html" class="contact-info-link">
+            <span class="contact-info-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </span>
+            <span class="contact-info-text">Stackly, Salem, Tamilnadu</span>
+          </a>
+        </div>
+        <div class="contact-info-item">
+          <a href="404.html" class="contact-info-link">
+            <span class="contact-info-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </span>
+            <span class="contact-info-text">info@stackly.com</span>
+          </a>
+        </div>
+        <div class="contact-info-item">
+          <a href="404.html" class="contact-info-link">
+            <span class="contact-info-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </span>
+            <span class="contact-info-text">07.00 am - 09.00 pm</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-head">
+          <a href="index.html" class="footer-brand">
+            <span class="footer-brand-icon" aria-hidden="true">
+              <span class="logo-img"></span>
+            </span>
+            Stackly Law Firm
+          </a>
+          <span class="footer-divider" aria-hidden="true"></span>
+        </div>
+
+        <div class="footer-grid">
+          <div class="footer-col footer-about">
+            <h3 class="footer-title">About</h3>
+            <p class="footer-about-text">
+              Dedicated legal counsel with decades of combined experience,
+              guiding you through every legal matter with integrity, precision,
+              and care.
+            </p>
+            <ul class="footer-social">
+              <li>
+                <a href="404.html" class="footer-social-link" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="404.html" class="footer-social-link" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                    <rect x="2" y="9" width="4" height="12" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="404.html" class="footer-social-link" aria-label="Twitter">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="404.html" class="footer-social-link" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-title">Services</h3>
+            <ul class="footer-links">
+              <li><a href="404.html" class="footer-link">Business Law</a></li>
+              <li><a href="404.html" class="footer-link">Education Law</a></li>
+              <li><a href="404.html" class="footer-link">Legal Consultation</a></li>
+              <li><a href="404.html" class="footer-link">General Lawyer</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-title">Page</h3>
+            <ul class="footer-links">
+              <li><a href="404.html" class="footer-link">Lawyer</a></li>
+              <li><a href="404.html" class="footer-link">Appointment</a></li>
+              <li><a href="404.html" class="footer-link">Documentation</a></li>
+              <li><a href="404.html" class="footer-link">Cases</a></li>
+              <li><a href="404.html" class="footer-link">News</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-title">Links</h3>
+            <ul class="footer-links">
+              <li><a href="404.html" class="footer-link">Terms of use</a></li>
+              <li><a href="404.html" class="footer-link">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col footer-contact">
+            <h3 class="footer-title">Contact</h3>
+            <ul class="footer-contact-list">
+              <li class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <a href="404.html" class="footer-link">+1 (234) 567-8900</a>
+              </li>
+              <li class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <a href="404.html" class="footer-link">123 Justice Avenue, New York, NY</a>
+              </li>
+              <li class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                <a href="404.html" class="footer-link">info@stacklylaw.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span class="footer-bottom-divider" aria-hidden="true"></span>
+          <p class="footer-copy">Copyright &copy;2026 Stackly All Right Reserved</p>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

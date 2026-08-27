@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Stackly Law Firm</title>
+    <meta
+      name="description"
+      content="Learn more about Stackly Law Firm — dedicated legal counsel protecting your rights with integrity and precision."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="about-hero">
+      <header class="navbar about-nav" id="navbar">
+        <nav class="nav-inner" aria-label="Main navigation">
+          <a href="index.html" class="brand">
+            <span class="brand-icon" aria-hidden="true">
+              <span class="logo-img"></span>
+            </span>
+            <span class="brand-text"
+              >Stackly <span class="brand-text-light">Law Firm</span></span
+            >
+          </a>
+
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link is-active">About</a></li>
+            <li>
+              <a href="services.html" class="nav-link">Services</a>
+            </li>
+            <li><a href="cases.html" class="nav-link">Cases</a></li>
+            <li><a href="faq.html" class="nav-link">FAQ</a></li>
+            <li>
+              <a href="contact.html" class="nav-link">Contact Us</a>
+            </li>
+          </ul>
+
+          <div class="nav-actions">
+            <a href="signup.html" class="btn btn-cta about-nav-btn"
+              ><span class="btn-label">Sign Up</span></a
+            >
+            <button
+              class="nav-toggle about-toggle"
+              id="navToggle"
+              aria-label="Open menu"
+              aria-expanded="false"
+              aria-controls="fullscreenMenu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Premium Fullscreen Mobile Menu -->
+      <div class="fs-menu" id="fullscreenMenu" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+        <div class="fs-menu__backdrop"></div>
+        <div class="fs-menu__panel">
+          <div class="fs-menu__header">
+            <a href="index.html" class="fs-menu__brand">
+              <span class="brand-icon" aria-hidden="true">
+                <span class="logo-img"></span>
+              </span>
+              <span class="brand-text">Stackly <span class="brand-text-light">Law Firm</span></span>
+            </a>
+            <button class="fs-menu__close" id="fsMenuClose" aria-label="Close menu">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            </button>
+          </div>
+
+          <nav class="fs-menu__nav" aria-label="Mobile navigation">
+            <ul class="fs-menu__links">
+              <li><a href="index.html" class="fs-menu__link" data-index="0">Home</a></li>
+              <li><a href="about.html" class="fs-menu__link is-active" data-index="1">About</a></li>
+              <li><a href="services.html" class="fs-menu__link" data-index="2">Services</a></li>
+              <li><a href="cases.html" class="fs-menu__link" data-index="3">Cases</a></li>
+              <li><a href="faq.html" class="fs-menu__link" data-index="4">FAQ</a></li>
+              <li><a href="contact.html" class="fs-menu__link" data-index="5">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="fs-menu__bottom">
+            <a href="contact.html" class="fs-menu__cta">
+              <span class="fs-menu__cta-text">Get Consultation</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="4" y1="12" x2="20" y2="12"/>
+                <polyline points="13 5 20 12 13 19"/>
+              </svg>
+            </a>
+
+            <div class="fs-menu__info">
+              <div class="fs-menu__info-block">
+                <span class="fs-menu__info-label">Location</span>
+                <span class="fs-menu__info-value">Stackly, Salem, Tamil Nadu</span>
+              </div>
+              <div class="fs-menu__info-block">
+                <span class="fs-menu__info-label">Email</span>
+                <a href="mailto:info@stackly.com" class="fs-menu__info-value fs-menu__info-link">info@stackly.com</a>
+              </div>
+              <div class="fs-menu__info-block">
+                <span class="fs-menu__info-label">Working Hours</span>
+                <span class="fs-menu__info-value">Mon – Sat : 9:00 AM – 7:00 PM</span>
+                <span class="fs-menu__info-value fs-menu__info-muted">Sunday : Closed</span>
+              </div>
+            </div>
+
+            <div class="fs-menu__social">
+              <a href="404.html" class="fs-menu__social-link" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="404.html" class="fs-menu__social-link" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </a>
+              <a href="404.html" class="fs-menu__social-link" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="404.html" class="fs-menu__social-link" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </header>
+
+      <div class="about-hero-content">
+        <div class="about-hero-inner">
+          <h1 class="about-hero-title">About Us</h1>
+
+          <span class="about-hero-divider" aria-hidden="true"></span>
+
+          <p class="about-hero-text">
+            Stackly Law Firm is a full-service legal practice committed to
+            protecting your rights with integrity, precision, and unwavering
+            dedication to every client we serve.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-page">
+      <div class="about-page-container">
+        <div class="about-page-top">
+          <div class="about-page-left">
+            <span class="about-page-label reveal">About Us</span>
+            <h2 class="about-page-title reveal">
+              Helping To Overcome And Ease The Legal Burden
+            </h2>
+          </div>
+
+          <span class="about-page-divider" aria-hidden="true"></span>
+
+          <figure class="about-page-image reveal">
+            <img
+              src="images/home-about-img.jpg"
+              alt="Lady Justice statue holding scales and a sword"
+            />
+          </figure>
+        </div>
+
+        <p class="about-page-text reveal">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Our dedicated
+          attorneys carefully manage and resolve every legal matter, guiding you
+          with clarity and confidence at each step. We stand beside you to ease
+          the burden of even the most complex cases, delivering counsel you can
+          truly trust — built on integrity, precision, and an unwavering
+          commitment to your peace of mind. From the first meeting to the last
+          detail, our team simplifies the process, protects your rights, and
+          pursues the strongest possible outcome on your behalf.
+</p>
+      </div>
+    </section>
+
+
+    <section class="partners" id="partners">
+        <div class="partners-container">
+          <h2 class="partners-title reveal">Our Partnership</h2>
+
+          <div class="partners-grid">
+            <div class="partner reveal">
+              <div class="partner-icon">
+                <div class="icon-wrapper">
+<svg viewBox="0 0 160 172" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M66.0846 66.1913L66.1853 56.5403L56.5136 56.0471L51.7586 63.2648L56.7139 72.706H60.9311L66.0846 66.1913ZM89.0167 67.2502L88.8512 51.3821L105.918 50.5118L114.092 62.9218L106.113 78.1281H96.8281L89.6124 69.0075L89.0167 67.2502ZM93.8151 56.5403L93.9153 66.1913L99.0698 72.7054H103.292L108.244 63.2695L103.487 56.0471L93.8151 56.5403ZM84.4793 80.1718L80.0002 75.4486L75.5216 80.1724L72.1138 76.2754L78.2968 69.7548H81.7035L87.8876 76.2748L84.4793 80.1718ZM113.565 32.9377C114.99 36.6921 118.17 45.0266 121.583 53.6409C126.479 65.9974 124.422 68.9486 120.299 74.8611C119.891 75.4456 119.475 76.0414 119.364 76.2047C116.56 80.3186 120.883 84.7536 120.896 84.766L120.434 89.0549L105.503 98.6505L97.5561 95.3357V137.057H92.6281V91.4168L95.9582 88.8858L105.039 92.6721L115.484 85.9593C113.731 83.0229 111.959 78.0657 115.437 72.9641C115.976 72.1721 116.193 71.8615 116.391 71.5786C119.342 67.3457 120.814 65.2331 117.078 55.8007C112.312 43.7743 108.249 32.9689 108.237 32.9377H113.565ZM37.1526 32.9377C36.1268 50.3745 16.7615 58.4956 5.45607 46.0584C-6.18197 33.2547 1.99792 11.1448 18.6732 11.1448V16.5675C6.36935 16.5675 0.403293 32.8328 8.94153 42.2256C17.1445 51.2502 31.1956 45.5587 32.2096 32.9377H37.1526ZM127.79 32.9377C128.805 45.5587 142.856 51.2502 151.059 42.2256C159.597 32.8333 153.632 16.5675 141.327 16.5675V11.1448C158.003 11.1448 166.182 33.2559 154.543 46.0584C143.239 58.4956 123.874 50.3739 122.848 32.9377H127.79ZM47.1119 120.793H42.1839V99.5651H47.1119V120.793ZM117.817 120.793H112.889V99.5651H117.817V120.793ZM57.2421 137.057H52.3136V103.431H57.2421V137.057ZM107.687 137.057H102.758V103.431H107.687V137.057ZM67.3728 91.4168V137.057H62.4437V95.3357L54.4963 98.6505L39.5667 89.0549L39.1045 84.766C39.1162 84.7536 43.44 80.318 40.6359 76.2047C40.5239 76.0414 40.1093 75.4456 39.7012 74.8611C35.5793 68.9486 33.5214 65.9974 38.4178 53.6409C41.8309 45.0266 45.0111 36.6921 46.4348 32.9377H51.7629C51.7511 32.9689 47.6882 43.7743 42.9226 55.8007C39.1853 65.2331 40.6589 67.3457 43.6098 71.5786C43.8075 71.8615 44.0233 72.1721 44.5633 72.9641C48.0412 78.0657 46.2698 83.0229 44.5167 85.9593L54.9607 92.6721L64.0416 88.8858L67.3728 91.4168ZM77.503 137.057H72.5739V91.4168H77.503V137.057ZM87.4259 137.057H82.4974V91.4168H87.4259V137.057ZM79.9996 22.2902H141.398C148.885 22.2902 152.712 32.293 147.376 38.173L147.381 38.1777C142.446 43.6069 134.012 40.4571 133.027 32.9377H138.084C138.968 35.5848 142.068 36.3556 143.896 34.3443C144.182 34.3443 146.074 31.2458 143.896 28.8497C143.258 28.1467 142.373 27.7117 141.398 27.7117L18.6014 27.7129C13.9515 27.7129 13.9515 35.4817 18.6014 35.4817C20.1039 35.4817 21.4136 34.4445 21.9166 32.9377H26.9736C25.987 40.4571 17.5548 43.6069 12.6198 38.1777C7.30191 32.3283 11.0906 22.2902 18.6014 22.2902H79.9996ZM82.4642 154.861H116.658V160.284H43.342V154.861H82.4642ZM80.0002 11.1448H141.327V16.5675H18.6732V11.1448H80.0002ZM82.4642 143.715H107.687V149.138H52.3141V143.715H82.4642ZM80.0002 -9.15527e-05H128.239V5.42264H31.7618V-9.15527e-05H80.0002ZM33.2182 171.428H129.696V166.006H81.4577H33.2182V171.428ZM71.1218 53.9827L70.9831 67.2502L70.3863 69.0075L63.1717 78.1281H53.8819L45.9045 62.926L54.0823 50.5118L71.1486 51.3821L71.1218 53.9827Z" fill="#3A3A38"/>
+                </svg>
+                </div>
+              </div>
+              <span class="partner-name">Alexander Reed</span>
+            </div>
+
+            <div class="partner reveal">
+              <div class="partner-icon">
+                <div class="icon-wrapper">
+<svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M69.4641 49.7867C76.4687 50.8527 84.0615 50.8501 91.0651 49.7792L97.0792 34.3441L63.4377 34.3559L69.4641 49.7867ZM87.1589 55.8965L97.7769 144.529L79.9506 160L62.1156 144.542L72.6736 55.8318C75.1704 56.0823 77.7078 56.2227 80.2673 56.2219C82.5859 56.221 84.8879 56.1042 87.1589 55.8965Z" fill="#3A3A38"/>
+                  <path d="M55.9658 23.2432H103.927L108.51 15.9674H51.3831L55.9658 23.2432ZM158.889 22.996C156.601 15.1856 150.974 8.89674 143.693 4.83307C140.059 2.80627 136.066 1.3755 131.926 0.63826C130.445 0.374298 128.953 0.20784 127.449 0.120422C126.822 0.0842743 125.178 0.00608826 124.924 0.00105286V0.000198364H35.0738L35.073 0.00105286C34.8198 0.00608826 33.1776 0.0842743 32.5506 0.120422C31.0477 0.20784 29.5545 0.374298 28.0737 0.63826C23.9338 1.3755 19.9403 2.80627 16.3075 4.83307C9.02509 8.89674 3.39817 15.1856 1.11125 22.996C-1.09278 30.5215 0.0229016 38.7505 4.09228 45.5287C8.2128 52.3925 15.4202 57.3313 23.6974 58.3998C31.4463 59.4001 39.5251 56.8404 44.9933 51.4863C50.2348 46.3542 52.3162 39.0254 50.3485 32.0935C48.477 25.4969 43.0371 19.9193 35.8191 18.7348C29.2123 17.6512 22.1372 20.3657 18.8987 26.1098C16.9433 29.5791 16.7211 33.8874 18.7937 37.3593C20.704 40.5604 24.3448 42.8781 28.2995 42.5469C30.3439 42.3762 32.3803 41.5516 33.7879 40.1048C34.1839 39.6971 34.5288 39.244 34.8066 38.7556C35.0042 38.4067 35.1197 38.3327 34.7705 38.1226C34.363 37.8779 34.1169 37.5989 33.7121 37.8864C33.2297 38.2293 32.779 38.6253 32.2745 38.9372C31.4843 39.4247 30.3897 39.6256 29.4646 39.6593C27.496 39.7299 25.8097 38.9111 24.4603 37.5871C22.9645 36.0899 22.3595 33.3906 23.0315 31.3251C23.663 29.3858 25.1412 27.744 26.9483 26.6982C29.0262 25.4961 31.546 25.1556 33.9149 25.623C36.0087 26.0358 37.9199 27.2161 39.2535 28.4426C40.4926 29.7523 41.4848 31.1822 42.0969 32.8576C43.4348 36.5228 42.8713 40.6748 40.49 43.8364C38.0963 47.0141 34.2254 49.1384 30.2116 49.8058C25.9385 50.5154 21.4731 49.6032 17.9117 47.2402C14.6397 45.0697 12.1437 41.8492 10.7026 38.3227C7.81945 31.2671 9.26058 22.9935 14.3257 17.1712C18.2522 12.6586 23.7856 9.73402 29.7195 8.40329C32.1501 7.85771 34.6514 7.65343 37.1482 7.65343H122.851C125.348 7.65343 127.849 7.85771 130.28 8.40329C136.214 9.73402 141.748 12.6586 145.674 17.1712C150.739 22.9935 152.18 31.2671 149.297 38.3227C147.857 41.8492 145.361 45.0697 142.089 47.2402C138.526 49.6032 134.061 50.5154 129.789 49.8058C125.774 49.1384 121.903 47.0141 119.509 43.8364C117.129 40.6748 116.565 36.5228 117.903 32.8576C118.515 31.1822 119.508 29.7523 120.747 28.4426C122.079 27.2161 123.991 26.0358 126.085 25.623C128.453 25.1556 130.974 25.4961 133.051 26.6982C134.858 27.744 136.336 29.3858 136.968 31.3251C137.64 33.3906 137.035 36.0899 135.54 37.5871C134.19 38.9111 132.504 39.7299 130.535 39.6593C129.61 39.6256 128.515 39.4247 127.726 38.9372C127.22 38.6253 126.77 38.2293 126.287 37.8864C125.882 37.5989 125.636 37.8779 125.229 38.1226C124.88 38.3327 124.995 38.4067 125.193 38.7556C125.471 39.244 125.815 39.6971 126.212 40.1048C127.619 41.5516 129.655 42.3762 131.7 42.5469C135.655 42.8781 139.295 40.5604 141.207 37.3593C143.279 33.8874 143.057 29.5791 141.101 26.1098C137.862 20.3657 130.787 17.6512 124.181 18.7348C116.962 19.9193 111.522 25.4969 109.651 32.0935C107.684 39.0254 109.765 46.3542 115.006 51.4863C120.474 56.8404 128.553 59.4001 136.302 58.3998C144.579 57.3313 151.787 52.3925 155.907 45.5287C159.976 38.7505 161.093 30.5215 158.889 22.996ZM49.1094 69.1684C49.1094 66.0757 46.4794 63.5689 43.2355 63.5689C39.9908 63.5689 37.3608 66.0757 37.3608 69.1684V136.725H40.4618L49.1094 69.1684ZM110.782 69.1684C110.782 66.0757 113.413 63.5689 116.657 63.5689C119.902 63.5689 122.532 66.0757 122.532 69.1684V136.725H119.431L110.782 69.1684Z" fill="#3A3A38"/>
+                </svg>
+                </div>
+              </div>
+              <span class="partner-name">Margaret Shaw</span>
+            </div>
+
+            <div class="partner reveal">
+              <div class="partner-icon">
+                <div class="icon-wrapper">
+<svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path fill-rule="evenodd" fill="#3A3A38" d="M80 6L6 42L154 42Z M16 42L144 42L144 150L16 150Z M26 42L38 42L38 118L26 118Z M50 42L62 42L62 118L50 118Z M98 42L110 42L110 118L98 118Z M122 42L134 42L134 118L122 118Z M6 150L154 150L154 160L6 160Z"/>
+                </svg>
+                </div>
+              </div>
+              <span class="partner-name">Jonathan Cole</span>
+            </div>
+
+            <div class="partner reveal">
+              <div class="partner-icon">
+                <div class="icon-wrapper">
+<svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M80 16.1938C69.6675 16.1938 59.5495 16.9824 49.9116 18.4815V25.7753C59.5235 24.2625 69.6455 23.467 80 23.467C90.3545 23.467 100.477 24.2625 110.088 25.7753V18.4815C100.451 16.9824 90.3332 16.1938 80 16.1938ZM110.088 152.513H49.9116V160H110.088V152.513ZM104.509 137.479H55.4901V144.966H104.509V137.479ZM55.4901 39.5461H104.509V32.0592H55.4901V39.5461ZM95.5774 47.093H89.7664V129.932H95.5774V47.093ZM82.9052 47.093H77.0942V129.932H82.9052V47.093ZM70.233 129.932H64.422V47.093H70.233V129.932Z" fill="#3A3A38"/>
+                  <path d="M138.178 80.6964L136.87 22.2778C137.097 22.2924 137.323 22.2907 137.547 22.265L148.205 80.9692C144.913 80.8053 141.563 80.7221 138.178 80.6964ZM124.606 80.9692L135.338 21.8574C135.535 21.9552 135.733 22.0341 135.932 22.0976L134.62 80.6964C131.24 80.7221 127.894 80.8053 124.606 80.9692ZM25.3804 80.6964L24.0683 22.0976C24.2675 22.0341 24.4653 21.9552 24.6617 21.8574L35.3939 80.9692C32.1064 80.8053 28.7604 80.7221 25.3804 80.6964ZM11.7951 80.9692L22.4533 22.265C22.677 22.2907 22.9028 22.2924 23.1299 22.2778L21.8219 80.6964C18.4372 80.7221 15.0872 80.8053 11.7951 80.9692ZM152.501 81.2361L138.816 21.902C139.691 21.4944 140.473 20.7745 141.058 19.7979C142.834 20.5659 144.604 21.3665 146.365 22.2083C146.469 21.9355 146.837 21.2438 146.771 20.9959C146.656 20.5574 145.392 19.8975 145.103 19.6718C137.39 13.6359 128.74 9.43898 120.034 6.47939C110.719 3.31301 101.188 1.3737 91.5799 0.526756C72.496 -1.15511 53.0205 1.11284 34.7199 8.44958C30.2882 10.2259 25.8699 12.3479 21.6933 14.966C19.8012 16.1519 17.9071 17.3618 16.0888 18.7288C15.2423 19.3646 14.4112 20.0399 13.5773 20.7041C13.0978 21.086 13.1564 21.0628 13.4328 21.7158C13.7358 22.4314 13.9017 22.0719 14.5091 21.7819C15.4475 21.3348 16.3772 20.8568 17.323 20.4364C17.8518 20.2021 18.3819 19.9764 18.9114 19.7465C19.5002 20.7487 20.294 21.4867 21.1838 21.902L7.49929 81.2361C4.96978 81.4094 2.46091 81.6077 0 81.8591C5.12962 92.6334 13.7771 99.729 23.6015 99.729C33.4251 99.729 42.0726 92.6334 47.2022 81.8591C44.732 81.6068 42.2138 81.4086 39.675 81.2353L25.808 21.0542C27.0228 19.9138 27.7567 18.1341 27.8413 16.242C30.8017 15.226 33.7901 14.3293 36.7858 13.5458C55.4255 8.67012 74.6319 7.29545 93.6046 8.70101C103.211 9.41238 112.771 10.8986 122.214 13.2927C125.569 14.1431 128.881 15.1599 132.161 16.3106C132.261 18.177 132.992 19.9275 134.192 21.0542L120.325 81.2353C117.786 81.4086 115.268 81.6068 112.798 81.8591C117.927 92.6334 126.575 99.729 136.399 99.729C146.223 99.729 154.87 92.6334 160 81.8591C157.539 81.6077 155.03 81.4094 152.501 81.2361Z" fill="#3A3A38"/>
+                </svg>
+                </div>
+              </div>
+              <span class="partner-name">Elena Voss</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <section class="welcome">
+      <div class="welcome-container">
+        <div class="welcome-top">
+          <figure class="welcome-image reveal">
+            <img
+              src="images/about-welcome-img.jpg"
+              alt="Lady Justice statue holding a set of scales and a sword"
+            />
+          </figure>
+
+          <div class="welcome-content">
+            <span class="welcome-label reveal">Welcome Message</span>
+            <h2 class="welcome-title reveal">
+              Hello People,<br />Welcome To Northman
+            </h2>
+          </div>
+        </div>
+
+        <p class="welcome-text reveal">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Our dedicated
+          attorneys carefully manage and resolve every legal matter, guiding you
+          with clarity and confidence at each step. We stand beside you to ease
+          the burden of even the most complex cases, delivering counsel you can
+          truly trust — built on integrity, precision, and an unwavering
+commitment to your peace of mind.
+        </p>
+      </div>
+    </section>
+
+
+    <section class="cta">
+        <div class="cta-container">
+          <h2 class="cta-title">We Help You With Quality Legal Lawyer</h2>
+          <p class="cta-desc">
+            Our experienced attorneys provide dependable, client-first legal
+            counsel — protecting your rights and pursuing the strongest possible
+            outcome at every step.
+          </p>
+          <a href="404.html" class="btn cta-btn"><span class="btn-label">Get Started</span></a>
+        </div>
+      </section>
+
+    <section class="vision">
+      <div class="vision-container">
+        <div class="vision-grid">
+          <div class="vision-col reveal-left">
+            <div class="vision-header">
+              <span class="vision-line" aria-hidden="true"></span>
+              <h2 class="vision-title">Our Vision</h2>
+            </div>
+            <p class="vision-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Our
+              vision is a world where justice is within reach for everyone,
+              and every client walks away with clarity, confidence, and a
+              clear path forward — no matter how complex the matter.
+            </p>
+            <p class="vision-text">
+              We aspire to lead the legal industry with integrity, precision,
+              and a modern approach that puts people before paperwork — making
+              expert counsel accessible, transparent, and truly dependable.
+            </p>
+          </div>
+
+          <div class="vision-col reveal-right">
+            <div class="vision-header">
+              <span class="vision-line" aria-hidden="true"></span>
+              <h2 class="vision-title">Our Mission</h2>
+            </div>
+            <p class="vision-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Our
+              mission is to stand beside every client from the first meeting
+              to the final resolution — simplifying the process, protecting
+              your rights, and pursuing the strongest possible outcome.
+            </p>
+            <p class="vision-text">
+              We combine seasoned expertise with personal attention, keeping
+              you informed at every step and delivering counsel built on
+              integrity, precision, and an unwavering commitment to your peace
+              of mind.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="success">
+      <div class="success-container">
+        <div class="success-top">
+          <figure class="success-image reveal">
+            <img
+              src="images/about-success.jpg"
+              alt="Judge gravel memorial statue"
+            />
+          </figure>
+
+          <div class="success-content">
+            <span class="success-label reveal">Success Story</span>
+            <h2 class="success-title reveal">
+              The Best Award Has Been<br />Given To Northman Legal<br />Lawyer
+              International
+            </h2>
+          </div>
+        </div>
+
+        <div class="success-bottom">
+          <div class="success-text">
+            <p class="success-para reveal">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Our firm
+              has been consistently recognized for outstanding legal counsel,
+              earning national and international awards across corporate,
+              commercial, and civil litigation practice areas.
+            </p>
+            <p class="success-para reveal">
+              Every honour reflects the dedication of our attorneys and the
+              trust of the clients we serve — a commitment to excellence that
+              continues to define everything we do.
+            </p>
+            <span class="success-author reveal">
+              Denny S - Lead International Legal
+            </span>
+          </div>
+
+          <figure class="success-portrait reveal">
+            <img
+              src="images/about-success-2.jpg"
+              alt="Lady Justice statue holding scales and a sword"
+            />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="testimonials-container">
+        <div class="testimonials-top">
+          <div class="testimonials-heading">
+            <span class="testimonials-label reveal">Testimonials</span>
+            <h2 class="testimonials-title reveal">
+              Our Happy Client Say<br />About Us
+            </h2>
+          </div>
+
+          <figure class="testimonials-image reveal">
+            <img
+              src="images/test-pillar.jpg"
+              alt="Judge gravel memorial statue"
+            />
+          </figure>
+        </div>
+
+        <div class="testimonial reveal">
+          <figure class="testimonial-avatar">
+            <img
+              src="images/test-person.jpg"
+              alt="Johantan G portrait"
+            />
+          </figure>
+
+          <div class="testimonial-content">
+            <span class="testimonial-quote" aria-hidden="true">&rdquo;</span>
+            <p class="testimonial-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. The team
+              guided me through every step of my case with clarity and genuine
+              care — professional, responsive, and truly dedicated to achieving
+              the best outcome. I could not recommend them more highly.
+            </p>
+            <div class="testimonial-meta">
+              <span class="testimonial-name">Johantan G</span>
+              <div class="testimonial-rating">
+                <span class="testimonial-stars" aria-hidden="true"
+                  >&starf;&starf;&starf;&starf;&star;</span
+                >
+                <span class="testimonial-review">4.8 / 5 - 322 Reviewed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-head">
+          <a href="index.html" class="footer-brand">
+            <span class="footer-brand-icon" aria-hidden="true">
+              <span class="logo-img"></span>
+            </span>
+            Stackly Law Firm
+          </a>
+          <span class="footer-divider" aria-hidden="true"></span>
+        </div>
+
+        <div class="footer-grid">
+          <div class="footer-col footer-about">
+            <h3 class="footer-title">About</h3>
+            <p class="footer-about-text">
+              Dedicated legal counsel with decades of combined experience,
+              guiding you through every legal matter with integrity, precision,
+              and care.
+            </p>
+            <ul class="footer-social">
+              <li>
+                <a href="404.html" class="footer-social-link" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="404.html" class="footer-social-link" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                    <rect x="2" y="9" width="4" height="12" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="404.html" class="footer-social-link" aria-label="Twitter">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="404.html" class="footer-social-link" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-title">Services</h3>
+            <ul class="footer-links">
+              <li><a href="404.html" class="footer-link">Business Law</a></li>
+              <li><a href="404.html" class="footer-link">Education Law</a></li>
+              <li><a href="404.html" class="footer-link">Legal Consultation</a></li>
+              <li><a href="404.html" class="footer-link">General Lawyer</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-title">Page</h3>
+            <ul class="footer-links">
+              <li><a href="404.html" class="footer-link">Lawyer</a></li>
+              <li><a href="404.html" class="footer-link">Appointment</a></li>
+              <li><a href="404.html" class="footer-link">Documentation</a></li>
+              <li><a href="404.html" class="footer-link">Cases</a></li>
+              <li><a href="404.html" class="footer-link">News</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-title">Links</h3>
+            <ul class="footer-links">
+              <li><a href="404.html" class="footer-link">Terms of use</a></li>
+              <li><a href="404.html" class="footer-link">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col footer-contact">
+            <h3 class="footer-title">Contact</h3>
+            <ul class="footer-contact-list">
+              <li class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <a href="404.html" class="footer-link">+1 (234) 567-8900</a>
+              </li>
+              <li class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <a href="404.html" class="footer-link">123 Justice Avenue, New York, NY</a>
+              </li>
+              <li class="footer-contact-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                <a href="404.html" class="footer-link">info@stacklylaw.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span class="footer-bottom-divider" aria-hidden="true"></span>
+          <p class="footer-copy">Copyright &copy;2026 Stackly All Right Reserved</p>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
