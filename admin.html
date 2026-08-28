@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Console | Stackly Law Firm</title>
+    <meta
+      name="description"
+      content="Stackly Law Firm admin console — users, lawyers, cases, appointments, payments, and analytics."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body class="adm-body">
+    <div class="adm-app" id="admApp">
+      <!-- ===================== Sidebar ===================== -->
+      <aside class="adm-sidebar" id="admSidebar">
+        <div class="adm-sidebar-head">
+          <a href="index.html" class="adm-brand" aria-label="Stackly Law Firm home">
+            <span class="adm-brand-icon" aria-hidden="true">
+              <span class="logo-img"></span>
+            </span>
+            <span class="adm-brand-text">Stackly</span>
+            <span class="adm-brand-console">Admin</span>
+          </a>
+          <button class="adm-collapse-btn" id="admCollapse" aria-label="Collapse sidebar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><polyline points="14 9 11 12 14 15"/></svg>
+          </button>
+        </div>
+
+        <nav class="adm-nav" aria-label="Admin navigation">
+          <p class="adm-nav-label">Overview</p>
+          <a href="#/dashboard" class="adm-nav-item is-active" data-view="dashboard">
+            <span class="adm-nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+            </span>
+            <span class="adm-nav-text">Dashboard</span>
+          </a>
+
+          <p class="adm-nav-label">Management</p>
+          <a href="#/users" class="adm-nav-item" data-view="users">
+            <span class="adm-nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <span class="adm-nav-text">Users</span>
+          </a>
+          <a href="#/lawyers" class="adm-nav-item" data-view="lawyers">
+            <span class="adm-nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7c0 3 3 4 7 4s7-1 7-4"/><path d="M5 7v8c0 3 3 4 7 4s7-1 7-4V7"/><path d="M19 17l3 4"/></svg>
+            </span>
+            <span class="adm-nav-text">Lawyers</span>
+          </a>
+          <a href="#/cases" class="adm-nav-item" data-view="cases">
+            <span class="adm-nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><path d="M3 9l2.5-4h13L21 9"/><line x1="12" y1="13" x2="12" y2="17"/></svg>
+            </span>
+            <span class="adm-nav-text">Cases</span>
+            <span class="adm-nav-badge" id="navCaseCount">0</span>
+          </a>
+          <a href="#/appointments" class="adm-nav-item" data-view="appointments">
+            <span class="adm-nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </span>
+            <span class="adm-nav-text">Appointments</span>
+            <span class="adm-nav-badge adm-nav-badge--gold" id="navApptCount">0</span>
+          </a>
+          <a href="#/payments" class="adm-nav-item" data-view="payments">
+            <span class="adm-nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </span>
+            <span class="adm-nav-text">Payments</span>
+          </a>
+          <a href="#/reports" class="adm-nav-item" data-view="reports">
+            <span class="adm-nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+            </span>
+            <span class="adm-nav-text">Reports</span>
+          </a>
+          <a href="#/settings" class="adm-nav-item" data-view="settings">
+            <span class="adm-nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </span>
+            <span class="adm-nav-text">Settings</span>
+          </a>
+        </nav>
+
+        <div class="adm-sidebar-foot">
+          <div class="adm-plan" id="admPlan">
+            <div class="adm-plan-head">
+              <span class="adm-plan-name">Pro Plan</span>
+              <span class="adm-plan-chip">82%</span>
+            </div>
+            <div class="adm-plan-bar"><span id="admPlanBar"></span></div>
+            <p class="adm-plan-meta">Case quota for this cycle</p>
+          </div>
+          <div class="adm-user-mini">
+            <span class="adm-avatar" id="admSidebarAvatar">AM</span>
+            <div class="adm-user-mini-text">
+              <strong id="admSidebarName">Adrian Mercer</strong>
+              <span id="admSidebarRole">Super Admin</span>
+            </div>
+            <button class="adm-icon-btn adm-icon-btn--ghost" id="admFootLogout" aria-label="Sign out">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <div class="adm-overlay" id="admOverlay"></div>
+
+      <!-- ===================== Main ===================== -->
+      <main class="adm-main">
+        <header class="adm-topbar">
+          <button class="adm-menu-btn" id="admMenuBtn" aria-label="Open menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+
+          <div class="adm-topbar-right">
+            <div class="adm-quick-wrap">
+              <button class="adm-btn adm-btn--gold" id="admQuickBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>New</span>
+                <svg class="adm-btn-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="adm-drop adm-quick-drop" id="admQuickDrop"></div>
+            </div>
+
+            <div class="adm-bell-wrap">
+              <button class="adm-icon-btn" id="admBellBtn" aria-label="Notifications">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                <span class="adm-badge" id="admBellBadge">0</span>
+              </button>
+              <div class="adm-drop adm-bell-drop" id="admBellDrop"></div>
+            </div>
+
+            <div class="adm-profile-wrap">
+              <button class="adm-profile-btn" id="admProfileBtn" aria-label="Account menu">
+                <span class="adm-avatar adm-avatar--sm" id="admTopAvatar">AM</span>
+                <span class="adm-profile-name" id="admTopName">Adrian Mercer</span>
+                <svg class="adm-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="adm-drop adm-profile-drop" id="admProfileDrop"></div>
+            </div>
+          </div>
+        </header>
+
+        <div class="adm-content" id="admContent">
+          <h1 class="adm-page-title" id="admPageTitle">Dashboard</h1>
+          <p class="adm-page-sub" id="admPageSub"></p>
+
+          <!-- ===================== Dashboard ===================== -->
+          <section class="adm-view is-active" id="view-dashboard"></section>
+
+          <!-- ===================== Users ===================== -->
+          <section class="adm-view" id="view-users"></section>
+
+          <!-- ===================== Lawyers ===================== -->
+          <section class="adm-view" id="view-lawyers"></section>
+
+          <!-- ===================== Cases ===================== -->
+          <section class="adm-view" id="view-cases"></section>
+
+          <!-- ===================== Appointments ===================== -->
+          <section class="adm-view" id="view-appointments"></section>
+
+          <!-- ===================== Payments ===================== -->
+          <section class="adm-view" id="view-payments"></section>
+
+          <!-- ===================== Reports ===================== -->
+          <section class="adm-view" id="view-reports"></section>
+
+          <!-- ===================== Settings ===================== -->
+          <section class="adm-view" id="view-settings"></section>
+        </div>
+      </main>
+    </div>
+
+    <!-- Slide-in detail panel -->
+    <div class="adm-panel-backdrop" id="admPanelBackdrop"></div>
+    <aside class="adm-panel" id="admPanel" aria-hidden="true">
+      <div class="adm-panel-head">
+        <div>
+          <h3 id="admPanelTitle"></h3>
+          <p id="admPanelSub"></p>
+        </div>
+        <button class="adm-icon-btn" id="admPanelClose" aria-label="Close panel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="adm-panel-body" id="admPanelBody"></div>
+    </aside>
+
+    <!-- Modal -->
+    <div class="adm-modal" id="admModal" aria-hidden="true">
+      <div class="adm-modal-card">
+        <button class="adm-icon-btn adm-modal-close" id="admModalClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div id="admModalContent"></div>
+      </div>
+    </div>
+
+    <!-- Toast stack -->
+    <div class="adm-toast-wrap" id="admToast" aria-live="polite"></div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

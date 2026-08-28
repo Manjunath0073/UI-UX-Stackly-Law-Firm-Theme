@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Stackly Law Firm</title>
+    <meta
+      name="description"
+      content="Stackly Law Firm client dashboard — manage cases, appointments, documents, messages, and billing."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body class="dash-body">
+    <div class="dash-app" id="dashApp">
+      <!-- ===================== Sidebar ===================== -->
+      <aside class="dash-sidebar" id="dashSidebar">
+        <div class="dash-sidebar-head">
+          <a href="index.html" class="dash-brand" aria-label="Go to Stackly home">
+            <span class="dash-brand-icon" aria-hidden="true">
+              <span class="logo-img"></span>
+            </span>
+            <span class="dash-brand-text">Stackly</span>
+          </a>
+          <button class="dash-sidebar-collapse" id="sidebarToggle" aria-label="Collapse sidebar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <line x1="9" y1="3" x2="9" y2="21" />
+              <polyline points="14 9 11 12 14 15" />
+            </svg>
+          </button>
+        </div>
+
+        <nav class="dash-nav" aria-label="Dashboard navigation">
+          <a href="#/dashboard" class="dash-nav-item is-active" data-view="dashboard">
+            <span class="dash-nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+            </span>
+            <span class="dash-nav-label">Dashboard</span>
+          </a>
+          <a href="#/cases" class="dash-nav-item" data-view="cases">
+            <span class="dash-nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><path d="M3 9l2.5-4h13L21 9"/><line x1="12" y1="13" x2="12" y2="17"/></svg>
+            </span>
+            <span class="dash-nav-label">My Cases</span>
+          </a>
+          <a href="#/appointments" class="dash-nav-item" data-view="appointments">
+            <span class="dash-nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </span>
+            <span class="dash-nav-label">Appointments</span>
+          </a>
+          <a href="#/documents" class="dash-nav-item" data-view="documents">
+            <span class="dash-nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </span>
+            <span class="dash-nav-label">Documents</span>
+          </a>
+          <a href="#/messages" class="dash-nav-item" data-view="messages">
+            <span class="dash-nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </span>
+            <span class="dash-nav-label">Messages</span>
+          </a>
+          <a href="#/billing" class="dash-nav-item" data-view="billing">
+            <span class="dash-nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </span>
+            <span class="dash-nav-label">Billing</span>
+          </a>
+          <a href="#/settings" class="dash-nav-item" data-view="settings">
+            <span class="dash-nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </span>
+            <span class="dash-nav-label">Settings</span>
+          </a>
+
+          <div class="dash-nav-divider"></div>
+
+          <a href="login.html" class="dash-nav-item dash-nav-item--logout" data-view="logout">
+            <span class="dash-nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            </span>
+            <span class="dash-nav-label">Logout</span>
+          </a>
+        </nav>
+
+        <div class="dash-sidebar-foot">
+          <div class="dash-user-mini">
+            <span class="dash-avatar" id="dashSidebarAvatar">JM</span>
+            <div class="dash-user-mini-text">
+              <strong id="dashSidebarName">John Mitchell</strong>
+              <span id="dashSidebarRole">Client</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="dash-overlay" id="dashOverlay"></div>
+
+      <!-- ===================== Main ===================== -->
+      <main class="dash-main">
+        <header class="dash-topbar">
+          <button class="dash-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+
+          <h1 class="dash-page-title" id="pageTitle">Dashboard</h1>
+
+          <div class="dash-topbar-right">
+            <button class="dash-icon-btn dash-bell" id="notifBtn" aria-label="Notifications">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              <span class="dash-badge">3</span>
+            </button>
+
+            <div class="dash-profile" id="profileMenu">
+              <button class="dash-profile-btn" id="profileBtn" aria-label="Account menu">
+                <span class="dash-avatar dash-avatar--sm" id="dashTopAvatar">JM</span>
+                <span class="dash-profile-name" id="dashTopName">John Mitchell</span>
+                <svg class="dash-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="dash-profile-dropdown">
+                <div class="dash-profile-dropdown-head">
+                  <span class="dash-avatar dash-avatar--sm" id="dashDropAvatar">JM</span>
+                  <div>
+                    <strong id="dashDropName">John Mitchell</strong>
+                    <span id="dashDropEmail">john.mitchell@stackly.com</span>
+                  </div>
+                </div>
+                <a href="#/settings" class="dash-dropdown-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                  <span>Account Settings</span>
+                </a>
+                <a href="login.html" class="dash-dropdown-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                  <span>Sign out</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="dash-content">
+          <!-- ===================== Dashboard Overview ===================== -->
+          <section class="dash-view is-active" id="view-dashboard" data-title="Dashboard">
+            <div class="dash-stats" id="dashStats">
+              <div class="dash-stat-skeleton"></div>
+              <div class="dash-stat-skeleton"></div>
+              <div class="dash-stat-skeleton"></div>
+              <div class="dash-stat-skeleton"></div>
+            </div>
+
+            <div class="dash-grid dash-grid--charts">
+              <div class="dash-card dash-card--area">
+                <div class="dash-card-head">
+                  <div>
+                    <h3 class="dash-card-title">Case Activity</h3>
+                    <p class="dash-card-sub">Matters opened per month</p>
+                  </div>
+                  <span class="dash-chip dash-chip--good">+12.4%</span>
+                </div>
+                <div class="dash-area-chart" id="areaChart"></div>
+              </div>
+
+              <div class="dash-card">
+                <div class="dash-card-head">
+                  <div>
+                    <h3 class="dash-card-title">Case Status</h3>
+                    <p class="dash-card-sub">Current distribution</p>
+                  </div>
+                </div>
+                <div class="dash-donut" id="donutChart">
+                  <div class="dash-donut-center">
+                    <strong id="donutTotal">0</strong>
+                    <span>Total</span>
+                  </div>
+                </div>
+                <ul class="dash-legend" id="donutLegend"></ul>
+              </div>
+            </div>
+
+            <div class="dash-grid dash-grid--activity">
+              <div class="dash-card">
+                <div class="dash-card-head">
+                  <div>
+                    <h3 class="dash-card-title">Recent Activity</h3>
+                    <p class="dash-card-sub">Latest updates across your matters</p>
+                  </div>
+                </div>
+                <ul class="dash-activity" id="activityList"></ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===================== My Cases ===================== -->
+          <section class="dash-view" id="view-cases" data-title="My Cases">
+            <div class="dash-toolbar">
+              <div class="dash-filters" id="caseFilters">
+                <button class="dash-filter is-active" data-filter="all">All</button>
+                <button class="dash-filter" data-filter="active">Active</button>
+                <button class="dash-filter" data-filter="closed">Closed</button>
+                <button class="dash-filter" data-filter="pending">Pending</button>
+              </div>
+              <span class="dash-toolbar-hint" id="caseCount"></span>
+            </div>
+
+            <div class="dash-card dash-card--table">
+              <div class="dash-table-wrap">
+                <table class="dash-table">
+                  <thead>
+                    <tr>
+                      <th>Case ID</th>
+                      <th>Title</th>
+                      <th>Status</th>
+                      <th>Lawyer Assigned</th>
+                      <th>Last Updated</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="casesBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===================== Appointments ===================== -->
+          <section class="dash-view" id="view-appointments" data-title="Appointments">
+            <div class="dash-toolbar">
+              <div>
+                <p class="dash-toolbar-sub">Schedule and manage your consultations</p>
+              </div>
+              <button class="dash-btn dash-btn--gold" id="bookApptBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Book Appointment
+              </button>
+            </div>
+            <div id="appointmentsList" class="dash-appointments"></div>
+          </section>
+
+          <!-- ===================== Documents ===================== -->
+          <section class="dash-view" id="view-documents" data-title="Documents">
+            <div class="dash-toolbar">
+              <div>
+                <p class="dash-toolbar-sub">All case files, agreements, and records</p>
+              </div>
+              <button class="dash-btn dash-btn--gold" id="uploadBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                Upload Document
+              </button>
+              <input type="file" id="fileInput" class="dash-hidden-input" hidden />
+            </div>
+            <div class="dash-card dash-card--table">
+              <div class="dash-table-wrap">
+                <table class="dash-table">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Type</th>
+                      <th>Uploaded</th>
+                      <th>Size</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="documentsBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===================== Messages ===================== -->
+          <section class="dash-view" id="view-messages" data-title="Messages">
+            <div class="dash-messenger">
+              <div class="dash-convos">
+                <div class="dash-convos-head">
+                  <h3 class="dash-card-title">Conversations</h3>
+                  <span class="dash-badge dash-badge--static" id="convoCount"></span>
+                </div>
+                <div id="conversationList" class="dash-convo-list"></div>
+              </div>
+              <div class="dash-chat" id="chatWindow">
+                <div class="dash-chat-head" id="chatHead"></div>
+                <div class="dash-chat-body" id="chatMessages"></div>
+                <div class="dash-chat-input">
+                  <input type="text" id="chatInput" placeholder="Type a message…" autocomplete="off" />
+                  <button class="dash-btn dash-btn--gold" id="chatSendBtn" aria-label="Send message">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===================== Billing ===================== -->
+          <section class="dash-view" id="view-billing" data-title="Billing">
+            <div class="dash-grid dash-grid--billing">
+              <div class="dash-card dash-card--accent">
+                <p class="dash-card-sub">Balance Due</p>
+                <h3 class="dash-amount" id="balanceDue">$0</h3>
+                <span class="dash-chip dash-chip--warn" id="dueChip">2 invoices pending</span>
+              </div>
+              <div class="dash-card">
+                <p class="dash-card-sub">Paid This Quarter</p>
+                <h3 class="dash-amount" id="paidQuarter">$0</h3>
+                <span class="dash-chip dash-chip--good">All settled</span>
+              </div>
+            </div>
+
+            <div class="dash-card dash-card--table">
+              <div class="dash-card-head">
+                <div>
+                  <h3 class="dash-card-title">Payment History</h3>
+                  <p class="dash-card-sub">Invoices and receipts</p>
+                </div>
+              </div>
+              <div class="dash-table-wrap">
+                <table class="dash-table">
+                  <thead>
+                    <tr>
+                      <th>Invoice</th>
+                      <th>Description</th>
+                      <th>Date</th>
+                      <th>Amount</th>
+                      <th>Status</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="billingBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===================== Settings ===================== -->
+          <section class="dash-view" id="view-settings" data-title="Settings">
+            <div class="dash-grid dash-grid--settings">
+              <div class="dash-card">
+                <div class="dash-card-head">
+                  <div>
+                    <h3 class="dash-card-title">Profile</h3>
+                    <p class="dash-card-sub">Update your personal information</p>
+                  </div>
+                </div>
+                <form class="dash-form" id="settingsForm" novalidate>
+                  <div class="dash-field">
+                    <label class="dash-label" for="setName">Full Name</label>
+                    <input class="dash-input" type="text" id="setName" autocomplete="name" />
+                    <span class="dash-error" id="setNameError"></span>
+                  </div>
+                  <div class="dash-field">
+                    <label class="dash-label" for="setEmail">Email</label>
+                    <input class="dash-input" type="email" id="setEmail" autocomplete="email" />
+                    <span class="dash-error" id="setEmailError"></span>
+                  </div>
+                  <div class="dash-field">
+                    <label class="dash-label" for="setPhone">Phone</label>
+                    <input class="dash-input" type="tel" id="setPhone" autocomplete="tel" />
+                    <span class="dash-error" id="setPhoneError"></span>
+                  </div>
+                  <button type="submit" class="dash-btn dash-btn--navy">Save Changes</button>
+                </form>
+              </div>
+
+              <div class="dash-card">
+                <div class="dash-card-head">
+                  <div>
+                    <h3 class="dash-card-title">Notifications</h3>
+                    <p class="dash-card-sub">Choose what you'd like to hear about</p>
+                  </div>
+                </div>
+                <ul class="dash-prefs" id="prefList"></ul>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- Case detail slide-in panel -->
+    <div class="dash-panel" id="casePanel" aria-hidden="true">
+      <div class="dash-panel-head">
+        <h3 id="casePanelTitle"></h3>
+        <button class="dash-icon-btn" id="casePanelClose" aria-label="Close panel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="dash-panel-body" id="casePanelBody"></div>
+    </div>
+
+    <!-- Modal -->
+    <div class="dash-modal" id="dashModal" aria-hidden="true">
+      <div class="dash-modal-card" id="modalCard">
+        <button class="dash-icon-btn dash-modal-close" id="modalClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <!-- Toast stack -->
+    <div class="dash-toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>

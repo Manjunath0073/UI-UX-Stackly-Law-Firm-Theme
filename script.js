@@ -102,6 +102,28 @@
     revealEls.forEach((el) => el.classList.add("is-visible"));
   }
 
+  /* ---------- Process flow: draw curved path on scroll ---------- */
+  const processFlow = document.querySelector(".process-flow");
+
+  if (processFlow) {
+    if ("IntersectionObserver" in window) {
+      const flowObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              processFlow.classList.add("is-drawn");
+              flowObserver.unobserve(processFlow);
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+      flowObserver.observe(processFlow);
+    } else {
+      processFlow.classList.add("is-drawn");
+    }
+  }
+
   /* ---------- Active nav link on scroll ---------- */
   const navLinks = document.querySelectorAll(".nav-link[href^='#']");
 

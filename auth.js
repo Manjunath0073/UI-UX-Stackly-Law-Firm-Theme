@@ -132,6 +132,34 @@
     });
   };
 
+  /* ---------- Session helpers ---------- */
+  const getSelectedRole = () =>
+    (document.querySelector('input[name="role"]:checked') || {}).value || "user";
+
+  const displayNameFromEmail = (email) => {
+    const local = (email || "").split("@")[0];
+    return (
+      local
+        .split(/[._-]+/)
+        .filter(Boolean)
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(" ") || "User"
+    );
+  };
+
+  const storeUser = (data) => {
+    try {
+      localStorage.setItem("stackly_user", JSON.stringify(data));
+    } catch (e) {
+      /* storage unavailable */
+    }
+  };
+
+  const redirectByRole = (role) => {
+    const target = role === "admin" ? "admin.html" : "dashboard.html";
+    setTimeout(() => (window.location.href = target), 1000);
+  };
+
   /* ---------- Login form ---------- */
   const loginForm = document.getElementById("loginForm");
 
@@ -167,8 +195,17 @@
 
       if (!isValid) return;
 
+      const role = getSelectedRole();
+      const emailValue = email.value.trim();
+      storeUser({
+        name: displayNameFromEmail(emailValue),
+        email: emailValue,
+        phone: "",
+        role,
+      });
       loginForm.reset();
-      showToast("Login successful! Welcome back.");
+      showToast("Login successful! Redirecting to your dashboard\u2026");
+      redirectByRole(role);
     });
   }
 
@@ -223,9 +260,17 @@
 
       if (!isValid) return;
 
+      const role = getSelectedRole();
+      storeUser({
+        name: name.value.trim(),
+        email: email.value.trim(),
+        phone: phone.value.trim(),
+        role,
+      });
       signupForm.reset();
       renderStrength("");
-      showToast("Account created successfully!");
+      showToast("Account created successfully! Redirecting\u2026");
+      redirectByRole(role);
     });
   }
 })();
