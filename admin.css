@@ -51,6 +51,10 @@ html {
   scroll-behavior: smooth;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-sans);
   background: var(--bg);
@@ -957,6 +961,18 @@ textarea {
   color: var(--navy);
 }
 
+.adm-toolbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.adm-toolbar-actions .adm-search-box {
+  width: 220px;
+}
+
 /* Filters */
 .adm-filters {
   display: flex;
@@ -1080,6 +1096,10 @@ textarea {
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
   margin-bottom: 22px;
+}
+
+.adm-stats--3 {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .adm-stat {
@@ -1209,6 +1229,15 @@ textarea {
   grid-template-columns: 1fr 1fr;
 }
 
+.adm-grid--settings > * {
+  min-width: 0;
+}
+
+.adm-grid--calendar {
+  grid-template-columns: 1.3fr 1fr;
+  align-items: start;
+}
+
 /* ============================================================
    Charts
    ============================================================ */
@@ -1253,6 +1282,21 @@ textarea {
   padding: 8px 6px 0;
   font-size: 0.7rem;
   color: var(--muted);
+}
+
+.adm-card-body--fill {
+  display: flex;
+  flex-direction: column;
+}
+
+.adm-card-body--fill .adm-chart {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.adm-card-body--fill .adm-chart svg {
+  flex: 1;
 }
 
 .adm-chart-legend {
@@ -1478,11 +1522,17 @@ textarea {
   white-space: nowrap;
 }
 
+.adm-cell-user-text {
+  min-width: 0;
+}
+
 .adm-cell-user-text span {
   display: block;
   font-size: 0.72rem;
   color: var(--muted);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .adm-avatar--xs {
@@ -2189,6 +2239,9 @@ textarea {
 }
 
 .adm-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   height: 34px;
   padding: 0 16px;
   border-radius: 9px;
@@ -2196,6 +2249,12 @@ textarea {
   font-weight: 600;
   color: var(--muted);
   transition: all 0.22s var(--ease);
+}
+
+.adm-tab svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
 }
 
 .adm-tab.is-active {
@@ -2480,9 +2539,17 @@ textarea {
   color: var(--navy);
 }
 
+.adm-settings-head div {
+  min-width: 0;
+}
+
 .adm-settings-head span {
+  display: block;
   font-size: 0.78rem;
   color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .adm-prefs {
@@ -2571,13 +2638,18 @@ textarea {
   .adm-stats {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .adm-stats--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 1080px) {
   .adm-grid--charts,
   .adm-grid--chart3,
   .adm-grid--split,
-  .adm-grid--settings {
+  .adm-grid--settings,
+  .adm-grid--calendar {
     grid-template-columns: 1fr;
   }
 }
@@ -2692,9 +2764,25 @@ textarea {
     justify-content: center;
   }
 
-  .adm-stats {
+  .adm-quick-drop {
+    position: fixed;
+    top: calc(var(--topbar-h) + 8px);
+    right: 16px;
+    left: auto;
+  }
+
+  .adm-stats,
+  .adm-stats--3 {
     grid-template-columns: 1fr;
     gap: 14px;
+  }
+
+  .adm-cal {
+    padding: 12px;
+  }
+
+  .adm-cal-day {
+    height: 38px;
   }
 
   .adm-content {
@@ -2703,6 +2791,16 @@ textarea {
 
   .adm-page-title {
     font-size: 1.5rem;
+  }
+
+  .adm-toolbar-actions {
+    width: 100%;
+  }
+
+  .adm-toolbar-actions .adm-search-box {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 160px;
   }
 
   .adm-btn--table-cta span {
@@ -2727,6 +2825,23 @@ textarea {
     border-top: 1px solid var(--line-soft);
     padding-top: 10px;
     margin-top: 2px;
+  }
+
+  .adm-appt-actions {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .adm-appt-meta {
+    flex-wrap: wrap;
+  }
+
+  .adm-select-row {
+    flex-wrap: wrap;
+  }
+
+  .adm-select-row .adm-select {
+    width: 100%;
   }
 
   /* Card-style tables on mobile */

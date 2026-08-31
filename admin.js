@@ -377,8 +377,11 @@
 
   const ICONS = {
     case: ICON('<path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><path d="M3 9l2.5-4h13L21 9"/><line x1="12" y1="13" x2="12" y2="17"/>'),
-    user: ICON('<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>'),
     users: ICON('<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'),
+    cases: ICON('<path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><path d="M3 9l2.5-4h13L21 9"/><line x1="12" y1="13" x2="12" y2="17"/>'),
+    revenue: ICON('<rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/>'),
+    appts: ICON('<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>'),
+    user: ICON('<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>'),
     lawyer: ICON('<path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7c0 3 3 4 7 4s7-1 7-4"/><path d="M5 7v8c0 3 3 4 7 4s7-1 7-4V7"/>'),
     appt: ICON('<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>'),
     pay: ICON('<rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/>'),
@@ -737,7 +740,7 @@
               <p class="adm-card-sub">Billed revenue per month</p>
             </div>
           </div>
-          <div class="adm-card-body"><div class="adm-chart" id="dashBarChart"></div></div>
+          <div class="adm-card-body adm-card-body--fill"><div class="adm-chart" id="dashBarChart"></div></div>
         </div>
         <div class="adm-card">
           <div class="adm-card-head">
@@ -871,8 +874,8 @@
           <button class="adm-filter ${state.lawyerSpec === "all" ? "is-active" : ""}" data-action="lawyer-spec" data-value="all">All</button>
           ${specs.map((s) => `<button class="adm-filter ${state.lawyerSpec === s ? "is-active" : ""}" data-action="lawyer-spec" data-value="${s}">${s}</button>`).join("")}
         </div>
-        <div style="display:flex;gap:10px;align-items:center">
-          <div class="adm-search-box" style="width:220px">${ICONS.search}<input class="adm-input" id="lawyerSearch" placeholder="Search counsel…" value="${esc(state.lawyerQ)}" /></div>
+        <div class="adm-toolbar-actions">
+          <div class="adm-search-box">${ICONS.search}<input class="adm-input" id="lawyerSearch" placeholder="Search counsel…" value="${esc(state.lawyerQ)}" /></div>
           <button class="adm-btn adm-btn--navy" data-action="lawyer-add">${ICONS.plus}<span>Add Lawyer</span></button>
         </div>
       </div>
@@ -1015,7 +1018,7 @@
       </div>`;
 
     const summary = `
-      <div class="adm-stats" style="grid-template-columns:repeat(3,1fr);margin-bottom:18px">
+      <div class="adm-stats adm-stats--3" style="margin-bottom:18px">
         <div class="adm-stat"><div class="adm-stat-top"><span class="adm-stat-icon" style="--sc:#8a6d2f;--stint:rgba(200,169,106,0.16)">${ICONS.clock}</span></div><div class="adm-stat-value">${pending}</div><div class="adm-stat-label">Awaiting approval</div></div>
         <div class="adm-stat"><div class="adm-stat-top"><span class="adm-stat-icon" style="--sc:#3f6b8a;--stint:rgba(63,107,138,0.12)">${ICONS.calendar}</span></div><div class="adm-stat-value">${today}</div><div class="adm-stat-label">Scheduled today</div></div>
         <div class="adm-stat"><div class="adm-stat-top"><span class="adm-stat-icon" style="--sc:#3f8a6b;--stint:rgba(63,138,107,0.12)">${ICONS.check}</span></div><div class="adm-stat-value">${approved}</div><div class="adm-stat-label">Approved total</div></div>
@@ -1137,7 +1140,7 @@
       : `<div class="adm-card"><div class="adm-empty">${ICONS.calendar}<strong>No appointments on ${fmtDay(state.apptSel)}</strong><p>Select another day or create one.</p></div></div>`;
 
     return `
-      <div class="adm-grid" style="grid-template-columns:1.3fr 1fr;align-items:start">
+      <div class="adm-grid adm-grid--calendar">
         <div class="adm-cal">
           <div class="adm-cal-head">
             <h3 class="adm-cal-title">${MONTH_NAMES[m]} ${y}</h3>
@@ -1194,7 +1197,7 @@
           .join("");
 
     return `
-      <div class="adm-stats" style="grid-template-columns:repeat(3,1fr)">
+      <div class="adm-stats adm-stats--3">
         <div class="adm-stat"><div class="adm-stat-top"><span class="adm-stat-icon" style="--sc:#3f8a6b;--stint:rgba(63,138,107,0.12)">${ICONS.pay}</span><span class="adm-stat-trend adm-stat-trend--up">▲ Collected</span></div><div class="adm-stat-value">${money(collected)}</div><div class="adm-stat-label">Total collected</div></div>
         <div class="adm-stat"><div class="adm-stat-top"><span class="adm-stat-icon" style="--sc:#8a6d2f;--stint:rgba(200,169,106,0.16)">${ICONS.clock}</span><span class="adm-stat-trend adm-stat-trend--down">Outstanding</span></div><div class="adm-stat-value">${money(outstanding)}</div><div class="adm-stat-label">Pending + overdue</div></div>
         <div class="adm-stat"><div class="adm-stat-top"><span class="adm-stat-icon" style="--sc:#3f6b8a;--stint:rgba(63,107,138,0.12)">${ICONS.report}</span><span class="adm-stat-trend adm-stat-trend--up">${rate}%</span></div><div class="adm-stat-value">${money(thisMonth)}</div><div class="adm-stat-label">Collected this month</div></div>
@@ -1256,7 +1259,7 @@
         </div>
       </div>
 
-      <div class="adm-stats" style="grid-template-columns:repeat(4,1fr)">
+      <div class="adm-stats">
         <div class="adm-stat"><div class="adm-stat-top"><span class="adm-stat-icon">${ICONS.pay}</span></div><div class="adm-stat-value">${money(totalRevenue)}</div><div class="adm-stat-label">Revenue in period</div></div>
         <div class="adm-stat"><div class="adm-stat-top"><span class="adm-stat-icon" style="--sc:#3f6b8a;--stint:rgba(63,107,138,0.12)">${ICONS.case}</span></div><div class="adm-stat-value">${newCases}</div><div class="adm-stat-label">New cases opened</div></div>
         <div class="adm-stat"><div class="adm-stat-top"><span class="adm-stat-icon" style="--sc:#3f8a6b;--stint:rgba(63,138,107,0.12)">${ICONS.check}</span></div><div class="adm-stat-value">${closed}</div><div class="adm-stat-label">Matters closed</div></div>
@@ -1332,7 +1335,7 @@
             </div>
             <div class="adm-field"><label class="adm-label">Email</label><input class="adm-input" id="setEmail" value="${esc(a.email)}" /></div>
             <div class="adm-field"><label class="adm-label">Phone</label><input class="adm-input" id="setPhone" value="${esc(a.phone)}" /></div>
-            <div style="display:flex;gap:10px">
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
               <button class="adm-btn adm-btn--navy" data-action="settings-save">Save Changes</button>
               <button class="adm-btn adm-btn--soft" data-action="settings-avatar">Change Avatar</button>
             </div>
